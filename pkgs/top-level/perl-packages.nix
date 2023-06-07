@@ -21749,6 +21749,38 @@ with self; {
     };
   };
 
+  SearchElasticsearchClient2_0 = buildPerlPackage {
+    pname = "Search-Elasticsearch-Client-2_0";
+    version = "6.81";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/E/EZ/EZIMUEL/Search-Elasticsearch-Client-2_0-6.81.tar.gz";
+      sha256 =
+        "73400b286fea3b889843263120cd021a21ab584d46261889c36afa1831fd84df";
+    };
+    buildInputs = [
+      IOSocketSSL
+      LogAny
+      LogAnyAdapterCallback
+      SubExporter
+      TestDeep
+      TestException
+    ];
+    propagatedBuildInputs = [
+      DevelGlobalDestruction
+      Moo
+      SearchElasticsearch
+      TryTiny
+      namespaceclean
+    ];
+    meta = {
+      homepage = "https://metacpan.org/pod/Search::Elasticsearch";
+      description =
+        "Thin client with full support for Elasticsearch 2.x APIs";
+      license = lib.licenses.asl20;
+    };
+  };
+
   SearchXapian = buildPerlPackage rec {
     pname = "Search-Xapian";
     version = "1.2.25.4";
