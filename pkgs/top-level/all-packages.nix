@@ -6304,6 +6304,7 @@ with pkgs;
   retool = callPackage ../applications/misc/retool { };
 
   rex = callPackage ../tools/system/rex { };
+  trex = callPackage ../tools/system/trex { };
 
   river = callPackage ../applications/window-managers/river { };
 
