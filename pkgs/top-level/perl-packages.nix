@@ -14080,6 +14080,23 @@ with self; {
     };
   };
 
+  LogAnyAdapterCallback = buildPerlPackage {
+    pname = "Log-Any-Adapter-Callback";
+    version = "0.101";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/P/PE/PERLANCAR/Log-Any-Adapter-Callback-0.101.tar.gz";
+      sha256 =
+        "d008075a2ceb57bb7e96d5e63b8ce8ec5b987fc9f224b460cba7eff73b954a16";
+    };
+    propagatedBuildInputs = [ LogAny ];
+    meta = {
+      homepage = "https://metacpan.org/release/Log-Any-Adapter-Callback";
+      description = "(DEPRECATED) Send Log::Any logs to a subroutine";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   LogAnyAdapterLog4perl = buildPerlPackage {
     pname = "Log-Any-Adapter-Log4perl";
     version = "0.09";
