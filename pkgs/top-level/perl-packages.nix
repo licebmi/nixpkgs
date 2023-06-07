@@ -8221,6 +8221,26 @@ with self; {
     };
   };
 
+  DistZillaRoleModuleMetadata = buildPerlPackage {
+    pname = "Dist-Zilla-Role-ModuleMetadata";
+    version = "0.006";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/E/ET/ETHER/Dist-Zilla-Role-ModuleMetadata-0.006.tar.gz";
+      sha256 =
+        "5e211cbde5057b87f8e34061b662de4cee50373eb50ed5ecf2583e70a22ba21e";
+    };
+    buildInputs =
+      [ DistZilla ModuleBuildTiny PathTiny TestDeep TestFatal TestNeeds ];
+    propagatedBuildInputs = [ Moose namespaceautoclean ];
+    meta = {
+      homepage =
+        "https://github.com/karenetheridge/Dist-Zilla-Role-ModuleMetadata";
+      description = "A role for plugins that use Module::Metadata";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   Dotenv = buildPerlPackage {
     pname = "Dotenv";
     version = "0.002";
