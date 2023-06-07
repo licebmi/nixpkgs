@@ -7853,6 +7853,37 @@ with self; {
     };
   };
 
+  DistZillaPluginMetaProvidesPackage = buildPerlPackage {
+    pname = "Dist-Zilla-Plugin-MetaProvides-Package";
+    version = "2.004003";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/K/KE/KENTNL/Dist-Zilla-Plugin-MetaProvides-Package-2.004003.tar.gz";
+      sha256 =
+        "80bb21fd18aea9f5203674a8294e33221d39d37354b1791da237ff0911398585";
+    };
+    buildInputs = [ PathTiny TestFatal ];
+    propagatedBuildInputs = [
+      DataDump
+      DistZilla
+      DistZillaPluginMetaProvides
+      DistZillaRoleModuleMetadata
+      Moose
+      MooseXLazyRequire
+      MooseXTypes
+      PPI
+      SafeIsa
+      namespaceautoclean
+    ];
+    meta = {
+      homepage =
+        "https://github.com/kentnl/Dist-Zilla-Plugin-MetaProvides-Package";
+      description =
+        "Extract namespaces/version from traditional packages for provides";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   DistZillaPluginMojibakeTests = buildPerlPackage {
     pname = "Dist-Zilla-Plugin-MojibakeTests";
     version = "0.8";
