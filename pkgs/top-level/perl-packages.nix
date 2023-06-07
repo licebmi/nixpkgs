@@ -7918,6 +7918,26 @@ with self; {
     };
   };
 
+  DistZillaPluginOurPkgVersion = buildPerlPackage {
+    pname = "Dist-Zilla-Plugin-OurPkgVersion";
+    version = "0.21";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/P/PL/PLICEASE/Dist-Zilla-Plugin-OurPkgVersion-0.21.tar.gz";
+      sha256 =
+        "76e3861f03f0ad87432089530349478f33dd07b56df650f8b971153c2e42d021";
+    };
+    buildInputs = [ TestDeep PathTiny TestException TestVersion ];
+    propagatedBuildInputs =
+      [ DistZilla Moose MooseXTypesPerl PPI namespaceautoclean ];
+    meta = {
+      homepage =
+        "https://metacpan.org/dist/Dist-Zilla-Plugin-OurPkgVersion";
+      description = "No line insertion and does Package version with our";
+      license = lib.licenses.artistic2;
+    };
+  };
+
   DistZillaPluginPodWeaver = buildPerlPackage {
     pname = "Dist-Zilla-Plugin-PodWeaver";
     version = "4.008";
