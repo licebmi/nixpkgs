@@ -28550,6 +28550,26 @@ with self; {
     };
   };
 
+  ZabbixTiny = buildPerlModule {
+    pname = "Zabbix-Tiny";
+    version = "1.11";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/W/WH/WHOSGONNA/Zabbix-Tiny-1.11.tar.gz";
+      sha256 =
+        "14c1eb47e0fb9052efd8fe7d1d1af7f812963b864c21472c38f65240d4cf4bce";
+    };
+    doCheck = false;
+    buildInputs = [ ModuleBuildTiny ];
+    propagatedBuildInputs = [ JSON LWP LWPProtocolhttps Moo ];
+    meta = {
+      homepage = "https://github.com/whosgonna/Zabbix-Tiny.pm";
+      description =
+        "A small module to eliminate boilerplate overhead when using the Zabbix API";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   ZonemasterCLI = buildPerlPackage {
     pname = "Zonemaster-CLI";
     version = "5.0.1";
