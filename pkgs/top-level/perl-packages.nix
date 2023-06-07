@@ -7828,6 +7828,31 @@ with self; {
     };
   };
 
+  DistZillaPluginMetaProvides = buildPerlPackage {
+    pname = "Dist-Zilla-Plugin-MetaProvides";
+    version = "2.002004";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/K/KE/KENTNL/Dist-Zilla-Plugin-MetaProvides-2.002004.tar.gz";
+      sha256 =
+        "fc28142da9a44c3d0b4a819e422b654fb2c700c1e657d15b53aad39f22d07717";
+    };
+    buildInputs = [ PathTiny TestFatal ];
+    propagatedBuildInputs = [
+      TestDeep
+      DistZilla
+      HashMergeSimple
+      Moose
+      MooseXTypes
+      namespaceautoclean
+    ];
+    meta = {
+      homepage = "https://github.com/kentnl/Dist-Zilla-Plugin-MetaProvides";
+      description = "Generating and Populating 'provides' in your META.yml";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   DistZillaPluginMojibakeTests = buildPerlPackage {
     pname = "Dist-Zilla-Plugin-MojibakeTests";
     version = "0.8";
