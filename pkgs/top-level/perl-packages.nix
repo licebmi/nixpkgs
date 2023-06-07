@@ -7900,6 +7900,24 @@ with self; {
     };
   };
 
+  DistZillaPluginOSPrereqs = buildPerlPackage {
+    pname = "Dist-Zilla-Plugin-OSPrereqs";
+    version = "0.011";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/D/DA/DAGOLDEN/Dist-Zilla-Plugin-OSPrereqs-0.011.tar.gz";
+      sha256 =
+        "06026cfd82c3f4fd9a5b75ae256a148d35ff5b977aabaf12cfcc6d73d823298f";
+    };
+    buildInputs = [ TestFatal TestDeep ];
+    propagatedBuildInputs = [ DistZilla Moose namespaceautoclean ];
+    meta = {
+      homepage = "https://github.com/dagolden/Dist-Zilla-Plugin-OSPrereqs";
+      description = "List prereqs conditional on operating system";
+      license = lib.licenses.asl20;
+    };
+  };
+
   DistZillaPluginPodWeaver = buildPerlPackage {
     pname = "Dist-Zilla-Plugin-PodWeaver";
     version = "4.008";
