@@ -7807,6 +7807,27 @@ with self; {
     };
   };
 
+  DistZillaPluginMakeMakerAwesome = buildPerlPackage {
+    pname = "Dist-Zilla-Plugin-MakeMaker-Awesome";
+    version = "0.49";
+    src = fetchurl {
+      url =
+        "mirror://cpan/authors/id/E/ET/ETHER/Dist-Zilla-Plugin-MakeMaker-Awesome-0.49.tar.gz";
+      sha256 =
+        "1ff46df84886fcb9d00f53fe300d74bc7bac7b92023597e651c436d1824c030e";
+    };
+    buildInputs =
+      [ CPANMetaCheck Filepushd ModuleBuildTiny TestDeep TestFatal ];
+    propagatedBuildInputs =
+      [ DistZilla Moose PathTiny TypeTiny namespaceautoclean ];
+    meta = {
+      homepage =
+        "https://github.com/avar/dist-zilla-plugin-makemaker-awesome";
+      description = "A more awesome MakeMaker plugin for L<Dist::Zilla>";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   DistZillaPluginMojibakeTests = buildPerlPackage {
     pname = "Dist-Zilla-Plugin-MojibakeTests";
     version = "0.8";
