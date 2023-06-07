@@ -27364,6 +27364,21 @@ with self; {
     };
   };
 
+  URLEncode = buildPerlPackage {
+    pname = "URL-Encode";
+    version = "0.03";
+    src = fetchurl {
+      url = "mirror://cpan/authors/id/C/CH/CHANSEN/URL-Encode-0.03.tar.gz";
+      sha256 =
+        "7295d7f07796b179131d9c0f230a6effa56d204de2f8dc72f2e09c61458c8ee6";
+    };
+    meta = {
+      description =
+        "Encoding and decoding of C<application/x-www-form-urlencoded> encoding";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   UUID4Tiny = buildPerlPackage {
     pname = "UUID4-Tiny";
     version = "0.002";
